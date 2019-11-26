@@ -822,6 +822,43 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
   # Dump fingerprints
   script.Print("Target: {}".format(target_info.fingerprint))
 
+  android_version = target_info.GetBuildProp("ro.build.version.release")
+  titanium_version = target_info.GetBuildProp("ro.titanium.build.version")
+  build_id = target_info.GetBuildProp("ro.build.id")
+  build_type = target_info.GetBuildProp("ro.build.type")
+  build_date = target_info.GetBuildProp("ro.build.date")
+  security_patch = target_info.GetBuildProp("ro.build.version.security_patch")
+  device = target_info.GetBuildProp("ro.titanium.device")
+  manufacturer = target_info.GetBuildProp("ro.product.manufacturer")
+
+  script.Print("-----------------------------------------------------");
+  script.Print(" _____ _ _              _                   ___  __  ");
+  script.Print("/__   (_) |_ __ _ _ __ (_)_   _ _ __ ___   /___\/ _\ ");
+  script.Print("  / /\/ | __/ _` | '_ \| | | | | '_ ` _ \ //  //\ \  ");
+  script.Print(" / /  | | || (_| | | | | | |_| | | | | | / \_// _\ \ ");
+  script.Print(" \/   |_|\__\__,_|_| |_|_|\__,_|_| |_| |_\___/  \__/ ");
+  script.Print("                                                     ");
+  script.Print("******************** Android 11.0 *******************");
+  script.Print("                    TitaniumOS Team                  ");
+  script.Print("-----------------------------------------------------");
+  script.Print(" Android version: %s"%(android_version));
+  script.Print("");
+  script.Print(" TitaniumOS version: %s"%(titanium_version));
+  script.Print("");
+  script.Print(" Build id: %s"%(build_id));
+  script.Print("");
+  script.Print(" Build type: %s"%(build_type));
+  script.Print("");
+  script.Print(" Build date: %s"%(build_date));
+  script.Print("");
+  script.Print(" Security patch: %s"%(security_patch));
+  script.Print("");
+  script.Print(" Device: %s"%(device));
+  script.Print("");
+  script.Print(" Manufacturer: %s"%(manufacturer));
+  script.Print("-----------------------------------------------------");
+
+
   device_specific.FullOTA_InstallBegin()
 
   CopyInstallTools(output_zip)
