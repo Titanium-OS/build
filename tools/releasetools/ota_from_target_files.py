@@ -955,26 +955,26 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
 
   android_version = target_info.GetBuildProp("ro.build.version.release")
   build_id = target_info.GetBuildProp("ro.build.id")
-  build_date = target_info.GetBuildProp("ro.titanium.build.date")
+  build_date = target_info.GetBuildProp("ro.titanium.build_date_utc")
   security_patch = target_info.GetBuildProp("ro.build.version.security_patch")
   device = target_info.GetBuildProp("ro.titanium.device")
 
-  script.Print("----------------------------------------------------");
-  script.Print("  _______ __ _______ _      __ __ __   __    __     ");
-  script.Print(" /______// //______// \    / // // /  /  \  /  \    ");
-  script.Print("   / /  / /   / /  / _ \  / // // /  / /\ \/ /\ \   ");
-  script.Print("  / /  / /   / /  /  _  \/ // // /__/ /  \__/  \ \  ");
-  script.Print(" /_/  /_/   /_/  /_/   \__//_//______/          \_\ ");
-  script.Print("                                                    ");
-  script.Print("******************** Android 10.0 ******************");
-  script.Print("--------------------- TitaniumOS -------------------");
-  script.Print("----------------------------------------------------");
+  script.Print("-----------------------------------------------------");
+  script.Print(" _____ _ _              _                   ___  __  ");
+  script.Print("/__   (_) |_ __ _ _ __ (_)_   _ _ __ ___   /___\/ _\ ");
+  script.Print("  / /\/ | __/ _` | '_ \| | | | | '_ ` _ \ //  //\ \  ");
+  script.Print(" / /  | | || (_| | | | | | |_| | | | | | / \_// _\ \ ");
+  script.Print(" \/   |_|\__\__,_|_| |_|_|\__,_|_| |_| |_\___/  \__/ ");
+  script.Print("                                                     ");
+  script.Print("******************** Android 10.0 *******************");
+  script.Print("                    TitaniumOS Team                  ");
+  script.Print("-----------------------------------------------------");
   script.Print(" Android version: %s"%(android_version));
   script.Print(" Build id: %s"%(build_id));
   script.Print(" Build date: %s"%(build_date));
   script.Print(" Security patch: %s"%(security_patch));
   script.Print(" Device: %s"%(device));
-  script.Print("----------------------------------------------");
+  script.Print("-----------------------------------------------------");
  
  
   device_specific.FullOTA_InstallBegin()
