@@ -4345,8 +4345,9 @@ titanium: otapackage
 	@echo ""
 	@echo -e ${CL_CYN}"════════════════════════════════════════════════════════════"${CL_RST}
 	@echo -e ${CL_BLD}${CL_YLW}"Zip: "${CL_YLW} $(TARGET_PACKAGE)${CL_RST}
-	@echo -e ${CL_BLD}${CL_YLW}"MD5: "${CL_YLW}" `cat $(TARGET_PACKAGE).md5sum | awk '{print $$1}' `"${CL_RST}
-	@echo -e ${CL_BLD}${CL_YLW}"Size: "${CL_YLW}" `du -sh $(TARGET_PACKAGE) | awk '{print $$1}' `"${CL_RST}
+	@echo -e ${CL_BLD}${CL_YLW}"MD5: "${CL_YLW}" `cat $(TARGET_PACKAGE).md5sum | cut -d ' ' -f 1` "${CL_RST}
+	@echo -e ${CL_BLD}${CL_YLW}"Size: "${CL_YLW}" `ls -l $(TARGET_PACKAGE) | cut -d ' ' -f 5` "${CL_RST}
+	@echo -e ${CL_BLD}${CL_YLW}"Timestamp:   "${CL_MAG} $(BUILD_TIMESTAMP) ${CL_RST}
 	@echo -e ${CL_CYN}"════════════════════════════════════════════════════════════"${CL_RST}
 
 ifeq ($(BOARD_BUILD_RETROFIT_DYNAMIC_PARTITIONS_OTA_PACKAGE),true)
